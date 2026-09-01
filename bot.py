@@ -1,4 +1,4 @@
-
+import os
 import telebot
 from openai import OpenAI
 import os
