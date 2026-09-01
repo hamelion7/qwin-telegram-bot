@@ -1,7 +1,6 @@
 import os
 import telebot
 from openai import OpenAI
-import os
 
 TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
 OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY')
