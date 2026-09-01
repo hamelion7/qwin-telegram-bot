@@ -5,6 +5,17 @@ from openai import OpenAI
 TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
 OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY')
 
+# Отладка: проверяем, загрузились ли переменные
+print(f"TELEGRAM_TOKEN loaded: {TELEGRAM_TOKEN is not None}")
+print(f"OPENROUTER_API_KEY loaded: {OPENROUTER_API_KEY is not None}")
+
+if not TELEGRAM_TOKEN:
+    print("ERROR: TELEGRAM_TOKEN is missing!")
+if not OPENROUTER_API_KEY:
+    print("ERROR: OPENROUTER_API_KEY is missing!")
+
+bot = telebot.TeleBot(TELEGRAM_TOKEN)
+
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=OPENROUTER_API_KEY)
 
